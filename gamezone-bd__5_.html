@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GameZone BD - বাংলাদেশের সেরা ডিজিটাল গেমিং মার্কেটপ্লেস। গেম কয়েন, ডায়মন্ড, গিফট কার্ড এবং আরও অনেক কিছু।">
+<title>GameZone BD | বাংলাদেশের সেরা গেমিং স্টোর</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Anek+Bangla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --primary: #0a0a1a;
+    --secondary: #050510;
+    --accent-blue: #00d4ff;
+    --accent-purple: #7c3aed;
+    --accent-pink: #e879f9;
+    --neon-green: #00ff88;
+    --neon-orange: #ff6600;
+    --card-bg: rgba(10,10,40,0.85);
+    --glass: rgba(255,255,255,0.05);
+    --glass-border: rgba(0,212,255,0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --font-main: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+    --font-display: 'Anek Bangla', 'Noto Sans Bengali', sans-serif;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--secondary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* === SCROLLBAR === */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a1a; }
+  ::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 3px; }
+
+  /* === RGB ANIMATED BACKGROUND === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 10%, rgba(124,58,237,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,212,255,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(232,121,249,0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    animation: bgPulse 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes bgPulse {
+    0% { opacity:0.8; }
+    100% { opacity:1; }
+  }
+
+  /* === FLOATING PARTICLES === */
+  .particles { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+  .particle {
+    position:absolute;
+    width:2px; height:2px;
+    background: var(--accent-blue);
+    border-radius:50%;
+    animation: float linear infinite;
+    opacity:0;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity:0; }
+    10% { opacity:1; }
+    90% { opacity:0.8; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity:0; }
+  }
+
+  /* === NAVBAR === */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(5,5,16,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,212,255,0.15);
+    padding: 0 20px;
+  }
+
+  .nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    text-shadow: none;
+    filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+    animation: logoGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 10px rgba(0,212,255,0.3)); }
+    100% { filter: drop-shadow(0 0 30px rgba(124,58,237,0.6)); }
+  }
+
+  .logo span { color: var(--accent-pink); -webkit-text-fill-color: var(--accent-pink); }
+
+  .nav-icons { display:flex; align-items:center; gap:15px; }
+  .nav-icon-btn {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    text-decoration: none;
+    position: relative;
+  }
+  .nav-icon-btn:hover {
+    background: rgba(0,212,255,0.15);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(0,212,255,0.3);
+    transform: translateY(-2px);
+  }
+  .badge {
+    position:absolute; top:-6px; right:-6px;
+    background: var(--accent-pink);
+    color: white;
+    font-size: 0.6rem;
+    width:18px; height:18px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2px;
+    padding: 6px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display:none; }
+
+  .nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--accent-blue);
+    background: rgba(0,212,255,0.08);
+    border-color: rgba(0,212,255,0.2);
+  }
+
+  /* === HERO === */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content { max-width: 900px; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124,58,237,0.2);
+    border: 1px solid rgba(124,58,237,0.4);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124,58,237,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(124,58,237,0); }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 4s ease-in-out infinite;
+  }
+
+  @keyframes textShimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+  }
+
+  .hero-btns { display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-bottom:50px; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,212,255,0.5);
+  }
+
+  .btn-secondary {
+    background: var(--glass);
+    color: white;
+    border: 1px solid var(--glass-border);
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0,212,255,0.1);
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .hero-stat {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    display: block;
+  }
+
+  .hero-stat-label { font-size: 0.72rem; color: var(--text-secondary); }
+
+  /* === SECTION === */
+  .section {
+    padding: 70px 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  .section-sub { color: var(--text-secondary); font-size: 0.95rem; }
+
+  /* === GAME CARDS === */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .product-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 18px;
+    padding: 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(124,58,237,0.05));
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 18px;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px rgba(0,212,255,0.2), 0 0 0 1px rgba(0,212,255,0.1);
+  }
+
+  .product-card:hover::before { opacity: 1; }
+
+  .card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    z-index: 2;
+    font-family: var(--font-main);
+  }
+
+  .badge-hot { background: linear-gradient(135deg, #ff416c, #ff4b2b); color:white; }
+  .badge-sale { background: linear-gradient(135deg, #11998e, #38ef7d); color:white; }
+  .badge-new { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color:white; }
+  .badge-best { background: linear-gradient(135deg, #f7971e, #ffd200); color:#1a1a1a; }
+
+  .card-icon {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .card-icon-ff { background: linear-gradient(135deg, #ff6b35, #f7931e); }
+  .card-icon-ef { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+  .card-icon-coc { background: linear-gradient(135deg, #11998e, #1a6b1a); }
+  .card-icon-pubg { background: linear-gradient(135deg, #c99e10, #8b6914); }
+  .card-icon-pc { background: linear-gradient(135deg, #434343, #000000); }
+  .card-icon-rs { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+  .card-icon-gift { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+
+  .card-stars {
+    color: #ffd700;
+    font-size: 0.72rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+
+  .card-name {
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .card-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .price-new {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+  }
+
+  .price-old {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+  }
+
+  .price-off {
+    font-size: 0.68rem;
+    background: rgba(0,255,136,0.15);
+    color: var(--neon-green);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .card-delivery { color: var(--neon-green); }
+
+  .card-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .btn-buy {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-buy:hover {
+    box-shadow: 0 4px 15px rgba(0,212,255,0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-cart {
+    background: rgba(0,212,255,0.08);
+    color: var(--accent-blue);
+    border: 1px solid rgba(0,212,255,0.25);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-cart:hover {
+    background: rgba(0,212,255,0.15);
+    border-color: var(--accent-blue);
+  }
+
+  /* === FLASH SALE BANNER === */
+  .flash-sale {
+    background: linear-gradient(135deg, rgba(255,65,108,0.15), rgba(255,75,43,0.1));
+    border: 1px solid rgba(255,75,43,0.3);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 0 20px 50px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flash-sale::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, rgba(255,75,43,0.05), transparent 30%);
+    animation: rotate 6s linear infinite;
+  }
+
+  @keyframes rotate { 100% { transform: rotate(360deg); } }
+
+  .flash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flash-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff4b2b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .countdown {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .countdown-block {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,75,43,0.4);
+    border-radius: 10px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 52px;
+  }
+
+  .countdown-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ff4b2b;
+    display: block;
+    line-height: 1;
+  }
+
+  .countdown-label { font-size: 0.6rem; color: var(--text-secondary); }
+
+  .countdown-sep { color: #ff4b2b; font-size: 1.3rem; font-weight: 800; }
+
+  /* === TABS === */
+  .game-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .tab-btn {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-family: var(--font-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tab-btn.active, .tab-btn:hover {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+  }
+
+  /* === FEATURED GAMES === */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .featured-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 50px rgba(0,212,255,0.15);
+  }
+
+  .featured-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+  }
+
+  .featured-img-gta { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+  .featured-img-rdr { background: linear-gradient(135deg, #1a1a2e, #8B0000, #2d1b1b); }
+  .featured-img-gow { background: linear-gradient(135deg, #1a0000, #8B0000, #ff4444); }
+  .featured-img-mc { background: linear-gradient(135deg, #228B22, #5D8A5E, #8BC34A); }
+  .featured-img-cp { background: linear-gradient(135deg, #0a0a1a, #ff0080, #00ffff); }
+  .featured-img-elden { background: linear-gradient(135deg, #1a1200, #8B7355, #DAA520); }
+
+  .featured-body { padding: 18px; }
+
+  .featured-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .featured-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .featured-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* === PAYMENT SECTION === */
+  .payment-section {
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .payment-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(15px);
+  }
+
+  .payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,212,255,0.15);
+    border-color: var(--accent-blue);
+  }
+
+  .payment-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .payment-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .payment-desc { font-size: 0.78rem; color: var(--text-secondary); }
+
+  /* === REVIEWS === */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 22px;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s;
+  }
+
+  .review-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .review-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 2px solid var(--accent-blue);
+    flex-shrink: 0;
+  }
+
+  .review-name { font-weight: 600; font-size: 0.9rem; color: white; }
+  .review-game { font-size: 0.72rem; color: var(--text-secondary); }
+  .review-stars { color: #ffd700; font-size: 0.8rem; margin-bottom: 8px; }
+  .review-text { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* === FAQ === */
+  .faq-list { max-width: 800px; margin: 0 auto; }
+
+  .faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .faq-q {
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    transition: all 0.3s;
+  }
+
+  .faq-q:hover { color: var(--accent-blue); }
+
+  .faq-icon {
+    color: var(--accent-blue);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .faq-item.open .faq-a {
+    padding: 0 20px 18px;
+    max-height: 200px;
+  }
+
+  /* === CONTACT === */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 15px 30px rgba(0,212,255,0.1);
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  }
+
+  .contact-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: white; margin-bottom: 8px; }
+  .contact-info { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* === FOOTER === */
+  footer {
+    background: rgba(5,5,16,0.95);
+    border-top: 1px solid var(--glass-border);
+    padding: 50px 20px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto 30px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .footer-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 15px; }
+
+  .footer-social { display: flex; gap: 10px; }
+
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .social-btn:hover {
+    background: rgba(0,212,255,0.15);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+  }
+
+  .footer-col-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.82rem;
+    display: block;
+    padding: 4px 0;
+    transition: all 0.3s;
+  }
+
+  .footer-links li a:hover { color: var(--accent-blue); padding-left: 5px; }
+
+  .footer-bottom {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* === WHATSAPP FLOAT === */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    background: #25D366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    animation: wapFloat 3s ease-in-out infinite;
+    transition: all 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.7);
+  }
+
+  @keyframes wapFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .whatsapp-float:hover { animation: none; }
+
+  /* === MODAL === */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: linear-gradient(135deg, #0a0a2e, #0d0d3d);
+    border: 1px solid rgba(0,212,255,0.3);
+    border-radius: 24px;
+    padding: 35px;
+    max-width: 450px;
+    width: 100%;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    position: relative;
+  }
+
+  .modal-overlay.active .modal { transform: scale(1); }
+
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .modal-close:hover { background: rgba(255,75,43,0.3); }
+
+  .modal-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .modal-product { font-size: 0.85rem; color: var(--accent-blue); margin-bottom: 20px; }
+
+  .modal-price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+  }
+
+  .input-group { margin-bottom: 14px; }
+
+  .input-label { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 6px; display: block; }
+
+  .input-field {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: white;
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .input-field:focus { border-color: var(--accent-blue); box-shadow: 0 0 10px rgba(0,212,255,0.15); }
+
+  .payment-methods { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+  .pm-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-family: var(--font-main);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+
+  .pm-btn.bkash { background: rgba(228,0,70,0.15); }
+  .pm-btn.nagad { background: rgba(240,103,36,0.15); }
+  .pm-btn.rocket { background: rgba(128,0,128,0.15); }
+  .pm-btn.active, .pm-btn:hover { border-color: var(--accent-blue); transform: scale(1.03); }
+
+  /* === TOAST === */
+  .toast {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(124,58,237,0.2));
+    border: 1px solid rgba(0,212,255,0.4);
+    border-radius: 12px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 0.85rem;
+    z-index: 3000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s;
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 300px;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* === DIVIDER === */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.2), transparent);
+    margin: 10px 20px;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* === GIFT CARDS === */
+  .gift-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+
+  .gift-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  .gift-card:hover {
+    transform: translateY(-6px) rotateX(3deg);
+    border-color: var(--accent-purple);
+    box-shadow: 0 20px 40px rgba(124,58,237,0.2);
+  }
+
+  .gift-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+  }
+
+  .gift-steam { background: linear-gradient(135deg, #1b2838, #2a475e); }
+  .gift-ps { background: linear-gradient(135deg, #003087, #0050a0); }
+  .gift-xbox { background: linear-gradient(135deg, #107c10, #1e7a1e); }
+  .gift-gplay { background: linear-gradient(135deg, #1a73e8, #0d47a1); }
+
+  .gift-body { padding: 18px; }
+
+  /* === MOBILE MENU === */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(5,5,16,0.97);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover { color: var(--accent-blue); }
+
+  .mobile-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 1.9rem; }
+    .hero-stats { grid-template-columns: repeat(3,1fr); }
+    .products-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .hero-stat-num { font-size: 1.3rem; }
+    .products-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .product-card { padding: 12px; }
+    .card-icon { height: 80px; font-size: 2rem; }
+    .price-new { font-size: 1rem; }
+    .card-btns { grid-template-columns: 1fr; }
+  }
+
+  /* NEON GLOW ANIMATION */
+  @keyframes neonPulse {
+    0%, 100% { text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue); }
+    50% { text-shadow: 0 0 20px var(--accent-blue), 0 0 40px var(--accent-blue), 0 0 60px var(--accent-blue); }
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+
+  /* NOTICE BAR */
+  .notice-bar {
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-purple));
+    background-size: 200% auto;
+    animation: gradientMove 3s linear infinite;
+    text-align: center;
+    padding: 7px 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1001;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .stock-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.68rem;
+    color: var(--neon-green);
+  }
+
+  .stock-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .section-bg-alt {
+    background: rgba(0,212,255,0.02);
+    border-radius: 30px;
+    padding: 60px 30px;
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- NOTICE BAR -->
+<div class="notice-bar">
+  ⚡ বিশেষ অফার: সকল Free Fire ডায়মন্ডে ১৫% ছাড় চলছে! • ২৪ ঘন্টা ডেলিভারি গ্যারান্টি • ১০,০০০+ সন্তুষ্ট গ্রাহক ⚡
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-top">
+    <a href="#" class="logo">Game<span>Zone</span> BD</a>
+    <div class="nav-icons">
+      <a href="#" class="nav-icon-btn" title="সার্চ" onclick="openModal('search')"><i class="fas fa-search"></i></a>
+      <a href="#" class="nav-icon-btn" title="উইশলিস্ট"><i class="fas fa-heart"></i><span class="badge">3</span></a>
+      <a href="#" class="nav-icon-btn" title="কার্ট" onclick="openModal('cart')"><i class="fas fa-shopping-cart"></i><span class="badge">2</span></a>
+      <a href="#" class="nav-icon-btn" title="লগইন" onclick="openModal('login')"><i class="fas fa-user"></i></a>
+      <button class="nav-icon-btn hamburger" onclick="toggleMenu()" id="menuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link active">🏠 হোম</a>
+    <a href="#freefire" class="nav-link">🔥 Free Fire</a>
+    <a href="#efootball" class="nav-link">⚽ eFootball</a>
+    <a href="#coc" class="nav-link">⚔️ Clash of Clans</a>
+    <a href="#pubg" class="nav-link">🎯 PUBG</a>
+    <a href="#pcgames" class="nav-link">💻 PC Games</a>
+    <a href="#rockstar" class="nav-link">🎮 Rockstar</a>
+    <a href="#giftcards" class="nav-link">🎁 Gift Cards</a>
+    <a href="#offers" class="nav-link">🏷️ অফার</a>
+    <a href="#contact" class="nav-link">📞 যোগাযোগ</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+  <a href="#home" onclick="toggleMenu()">🏠 হোম</a>
+  <a href="#freefire" onclick="toggleMenu()">🔥 Free Fire</a>
+  <a href="#efootball" onclick="toggleMenu()">⚽ eFootball</a>
+  <a href="#coc" onclick="toggleMenu()">⚔️ Clash of Clans</a>
+  <a href="#pubg" onclick="toggleMenu()">🎯 PUBG</a>
+  <a href="#pcgames" onclick="toggleMenu()">💻 PC Games</a>
+  <a href="#rockstar" onclick="toggleMenu()">🎮 Rockstar</a>
+  <a href="#giftcards" onclick="toggleMenu()">🎁 Gift Cards</a>
+  <a href="#contact" onclick="toggleMenu()">📞 যোগাযোগ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-bolt"></i> বাংলাদেশের #১ গেমিং স্টোর
+    </div>
+    <h1>গেমিং এর নতুন দুনিয়াতে<br>স্বাগতম 🎮</h1>
+    <p>সর্বোচ্চ মানের ডিজিটাল গেমিং পণ্য, সবচেয়ে কম দামে। Free Fire ডায়মন্ড থেকে শুরু করে PC গেম — সব কিছু এক জায়গায়।</p>
+    <div class="hero-btns">
+      <a href="#freefire" class="btn-primary"><i class="fas fa-shopping-bag"></i> এখনই কিনুন</a>
+      <a href="#offers" class="btn-secondary"><i class="fas fa-tag"></i> অফার দেখুন</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">১০ক+</span>
+        <span class="hero-stat-label">সন্তুষ্ট গ্রাহক</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">২৪/৭</span>
+        <span class="hero-stat-label">সাপোর্ট</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">৯৯%</span>
+        <span class="hero-stat-label">সাফল্য হার</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+      <span>নিচে স্ক্রোল করুন</span>
+    </div>
+  </div>
+</section>
+
+<!-- FLASH SALE -->
+<div class="flash-sale" id="offers">
+  <div class="flash-header">
+    <div class="flash-title">
+      ⚡ ফ্ল্যাশ সেল চলছে!
+    </div>
+    <div class="countdown">
+      <div class="countdown-block">
+        <span class="countdown-num" id="hours">08</span>
+        <div class="countdown-label">ঘন্টা</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-block">
+        <span class="countdown-num" id="minutes">24</span>
+        <div class="countdown-label">মিনিট</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-block">
+        <span class="countdown-num" id="seconds">37</span>
+        <div class="countdown-label">সেকেন্ড</div>
+      </div>
+    </div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card" onclick="buyNow('Free Fire 240 Diamonds', '১৮৯')">
+      <div class="card-badge badge-hot">🔥 হট ডিল</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ২৪০ ডায়মন্ড</div>
+      <div class="card-price-row">
+        <span class="price-new">৳১৮৯</span>
+        <span class="price-old">৳২৫০</span>
+        <span class="price-off">-২৪%</span>
+      </div>
+      <div class="card-meta">
+        <div class="stock-indicator"><div class="stock-dot"></div> স্টক আছে</div>
+        <div class="card-delivery">⚡ ৫ মিনিট</div>
+      </div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="event.stopPropagation();buyNow('Free Fire 240 Diamonds','১৮৯')">কিনুন</button>
+        <button class="btn-cart" onclick="event.stopPropagation();addToCart('FF 240 DM')">🛒 কার্ট</button>
+      </div>
+    </div>
+    <div class="product-card" onclick="buyNow('eFootball 1040 Coins', '৩৪৯')">
+      <div class="card-badge badge-sale">💰 সেল</div>
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ১০৪০ কয়েন</div>
+      <div class="card-price-row">
+        <span class="price-new">৳৩৪৯</span>
+        <span class="price-old">৳৪৫০</span>
+        <span class="price-off">-২২%</span>
+      </div>
+      <div class="card-meta">
+        <div class="stock-indicator"><div class="stock-dot"></div> স্টক আছে</div>
+        <div class="card-delivery">⚡ ১০ মিনিট</div>
+      </div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="event.stopPropagation();buyNow('eFootball 1040 Coins','৩৪৯')">কিনুন</button>
+        <button class="btn-cart" onclick="event.stopPropagation();addToCart('EF 1040')">🛒 কার্ট</button>
+      </div>
+    </div>
+    <div class="product-card" onclick="buyNow('PUBG 660 UC', '৪৯৯')">
+      <div class="card-badge badge-best">⭐ বেস্ট সেলার</div>
+      <div class="card-icon card-icon-pubg">🎯</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">PUBG ৬৬০ UC</div>
+      <div class="card-price-row">
+        <span class="price-new">৳৪৯৯</span>
+        <span class="price-old">৳৬৫০</span>
+        <span class="price-off">-২৩%</span>
+      </div>
+      <div class="card-meta">
+        <div class="stock-indicator"><div class="stock-dot"></div> স্টক আছে</div>
+        <div class="card-delivery">⚡ ৫ মিনিট</div>
+      </div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="event.stopPropagation();buyNow('PUBG 660 UC','৪৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="event.stopPropagation();addToCart('PUBG 660')">🛒 কার্ট</button>
+      </div>
+    </div>
+    <div class="product-card" onclick="buyNow('CoC Gold Pass', '৩৯৯')">
+      <div class="card-badge badge-new">✨ নতুন</div>
+      <div class="card-icon card-icon-coc">⚔️</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Clash of Clans গোল্ড পাস</div>
+      <div class="card-price-row">
+        <span class="price-new">৳৩৯৯</span>
+        <span class="price-old">৳৫০০</span>
+        <span class="price-off">-২০%</span>
+      </div>
+      <div class="card-meta">
+        <div class="stock-indicator"><div class="stock-dot"></div> স্টক আছে</div>
+        <div class="card-delivery">⚡ তাৎক্ষণিক</div>
+      </div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="event.stopPropagation();buyNow('CoC Gold Pass','৩৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="event.stopPropagation();addToCart('CoC GP')">🛒 কার্ট</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- FREE FIRE SECTION -->
+<section class="section" id="freefire">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-fire"></i> সবচেয়ে জনপ্রিয়</div>
+    <h2 class="section-title">🔥 Free Fire ডায়মন্ড</h2>
+    <p class="section-sub">সর্বনিম্ন দামে সর্বোচ্চ মানের Free Fire ডায়মন্ড</p>
+  </div>
+  <div class="game-tabs">
+    <button class="tab-btn active" onclick="filterFF('all',this)">সব প্যাকেজ</button>
+    <button class="tab-btn" onclick="filterFF('small',this)">ছোট প্যাকেজ</button>
+    <button class="tab-btn" onclick="filterFF('medium',this)">মাঝারি প্যাকেজ</button>
+    <button class="tab-btn" onclick="filterFF('large',this)">বড় প্যাকেজ</button>
+    <button class="tab-btn" onclick="filterFF('membership',this)">মেম্বারশিপ</button>
+  </div>
+  <div class="products-grid" id="ffGrid">
+    <!-- 25 -->
+    <div class="product-card" data-cat="small">
+      <div class="card-badge badge-new">নতুন</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ২৫ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳২৫</span><span class="price-old">৳৩৫</span><span class="price-off">-২৯%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 25 DM','২৫')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 25 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 50 -->
+    <div class="product-card" data-cat="small">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৫০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৪৫</span><span class="price-old">৳৬০</span><span class="price-off">-২৫%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 50 DM','৪৫')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 50 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 115 -->
+    <div class="product-card" data-cat="small">
+      <div class="card-badge badge-best">⭐ বেস্ট</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ১১৫ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৯৯</span><span class="price-old">৳১৩০</span><span class="price-off">-২৪%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 115 DM','৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 115 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 240 -->
+    <div class="product-card" data-cat="medium">
+      <div class="card-badge badge-hot">🔥 হট</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ২৪০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳১৮৯</span><span class="price-old">৳২৫০</span><span class="price-off">-২৪%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 240 DM','১৮৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 240 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 355 -->
+    <div class="product-card" data-cat="medium">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৩৫৫ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳২৭৯</span><span class="price-old">৳৩৫০</span><span class="price-off">-২০%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 355 DM','২৭৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 355 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 480 -->
+    <div class="product-card" data-cat="medium">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৪৮০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৩৬৯</span><span class="price-old">৳৪৮০</span><span class="price-off">-২৩%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 480 DM','৩৬৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 480 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 610 -->
+    <div class="product-card" data-cat="medium">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৬১০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৪৭৯</span><span class="price-old">৳৬০০</span><span class="price-off">-২০%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 610 DM','৪৭৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 610 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 850 -->
+    <div class="product-card" data-cat="large">
+      <div class="card-badge badge-hot">🔥 পপুলার</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৮৫০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৬৫৯</span><span class="price-old">৳৮৫০</span><span class="price-off">-২২%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 850 DM','৬৫৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 850 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 1240 -->
+    <div class="product-card" data-cat="large">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ১২৪০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৯৫৯</span><span class="price-old">৳১২০০</span><span class="price-off">-২০%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 1240 DM','৯৫৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 1240 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 1850 -->
+    <div class="product-card" data-cat="large">
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ১৮৫০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳১৩৯৯</span><span class="price-old">৳১৮০০</span><span class="price-off">-২২%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 1850 DM','১৩৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 1850 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 2530 -->
+    <div class="product-card" data-cat="large">
+      <div class="card-badge badge-best">💰 ভ্যালু</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ২৫৩০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳১৮৯৯</span><span class="price-old">৳২৫০০</span><span class="price-off">-২৪%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 2530 DM','১৮৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 2530 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- 5060 -->
+    <div class="product-card" data-cat="large">
+      <div class="card-badge badge-hot">👑 মেগা</div>
+      <div class="card-icon card-icon-ff">💎</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">Free Fire ৫০৬০ ডায়মন্ড</div>
+      <div class="card-price-row"><span class="price-new">৳৩৬৯৯</span><span class="price-old">৳৫০০০</span><span class="price-off">-২৬%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF 5060 DM','৩৬৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF 5060 DM')">🛒</button>
+      </div>
+    </div>
+    <!-- Weekly -->
+    <div class="product-card" data-cat="membership">
+      <div class="card-badge badge-new">✨ মেম্বার</div>
+      <div class="card-icon card-icon-ff">👑</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">FF সাপ্তাহিক মেম্বারশিপ</div>
+      <div class="card-price-row"><span class="price-new">৳১৪৯</span><span class="price-old">৳১৯৯</span><span class="price-off">-২৫%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF Weekly','১৪৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF Weekly')">🛒</button>
+      </div>
+    </div>
+    <!-- Monthly -->
+    <div class="product-card" data-cat="membership">
+      <div class="card-badge badge-best">⭐ মাসিক</div>
+      <div class="card-icon card-icon-ff">👑</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">FF মাসিক মেম্বারশিপ</div>
+      <div class="card-price-row"><span class="price-new">৳৩৯৯</span><span class="price-old">৳৫৫০</span><span class="price-off">-২৭%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF Monthly','৩৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF Monthly')">🛒</button>
+      </div>
+    </div>
+    <!-- Level Up -->
+    <div class="product-card" data-cat="membership">
+      <div class="card-badge badge-hot">🚀 লেভেল আপ</div>
+      <div class="card-icon card-icon-ff">🏆</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">FF লেভেল আপ পাস</div>
+      <div class="card-price-row"><span class="price-new">৳৪৯৯</span><span class="price-old">৳৬৫০</span><span class="price-off">-২৩%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div>
+      <div class="card-btns">
+        <button class="btn-buy" onclick="buyNow('FF Level Up Pass','৪৯৯')">কিনুন</button>
+        <button class="btn-cart" onclick="addToCart('FF LUP')">🛒</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EFOOTBALL -->
+<section class="section" id="efootball">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-futbol"></i> ফুটবল গেমিং</div>
+    <h2 class="section-title">⚽ eFootball কয়েন</h2>
+    <p class="section-sub">eFootball এর জন্য সেরা দামে কয়েন কিনুন</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card" onclick="buyNow('eF 100 Coins','৪৫')">
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ১০০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳৪৫</span><span class="price-old">৳৬০</span><span class="price-off">-২৫%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="event.stopPropagation();buyNow('eF 100','৪৫')">কিনুন</button><button class="btn-cart" onclick="event.stopPropagation();addToCart('eF 100')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ৩০০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳১২৯</span><span class="price-old">৳১৭০</span><span class="price-off">-২৪%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 300','১২৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 300')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-badge badge-best">⭐ বেস্ট</div>
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ৫৫০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳২২৯</span><span class="price-old">৳২৯০</span><span class="price-off">-২১%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 550','২২৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 550')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-badge badge-hot">🔥 হট</div>
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ১০৪০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳৩৪৯</span><span class="price-old">৳৪৫০</span><span class="price-off">-২২%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 1040','৩৪৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 1040')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ২১৩০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳৬৯৯</span><span class="price-old">৳৮৫০</span><span class="price-off">-১৮%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 2130','৬৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 2130')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ৩২৫০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳১০৪৯</span><span class="price-old">৳১৩০০</span><span class="price-off">-১৯%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 3250','১০৪৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 3250')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-badge badge-best">💰 মেগা</div>
+      <div class="card-icon card-icon-ef">⚽</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball ৫৭০০ কয়েন</div>
+      <div class="card-price-row"><span class="price-new">৳১৭৯৯</span><span class="price-old">৳২২০০</span><span class="price-off">-১৮%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF 5700','১৭৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF 5700')">🛒</button></div>
+    </div>
+    <div class="product-card">
+      <div class="card-badge badge-new">✨ স্পেশাল</div>
+      <div class="card-icon card-icon-ef">🌟</div>
+      <div class="card-stars">★★★★★</div>
+      <div class="card-name">eFootball স্পেশাল প্যাক</div>
+      <div class="card-price-row"><span class="price-new">৳৮৯৯</span><span class="price-old">৳১২০০</span><span class="price-off">-২৫%</span></div>
+      <div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ১০ মিনিট</div></div>
+      <div class="card-btns"><button class="btn-buy" onclick="buyNow('eF Special','৮৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('eF Special')">🛒</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CLASH OF CLANS -->
+<section class="section" id="coc">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-gem"></i> স্ট্র্যাটেজি গেমিং</div>
+    <h2 class="section-title">⚔️ Clash of Clans জেমস</h2>
+    <p class="section-sub">সেরা দামে CoC জেমস এবং গোল্ড পাস কিনুন</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card"><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ৮০ জেমস</div><div class="card-price-row"><span class="price-new">৳৬৯</span><span class="price-old">৳৯০</span><span class="price-off">-২৩%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 80','৬৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 80')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-best">⭐ বেস্ট</div><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ৫০০ জেমস</div><div class="card-price-row"><span class="price-new">৳৩৯৯</span><span class="price-old">৳৫০০</span><span class="price-off">-২০%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 500','৩৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 500')">🛒</button></div></div>
+    <div class="product-card"><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ১২০০ জেমস</div><div class="card-price-row"><span class="price-new">৳৮৯৯</span><span class="price-old">৳১১০০</span><span class="price-off">-১৮%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 1200','৮৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 1200')">🛒</button></div></div>
+    <div class="product-card"><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ২৫০০ জেমস</div><div class="card-price-row"><span class="price-new">৳১৭৯৯</span><span class="price-old">৳২২০০</span><span class="price-off">-১৮%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 2500','১৭৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 2500')">🛒</button></div></div>
+    <div class="product-card"><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ৬৫০০ জেমস</div><div class="card-price-row"><span class="price-new">৳৪৪৯৯</span><span class="price-old">৳৫৫০০</span><span class="price-off">-১৮%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 6500','৪৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 6500')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-hot">👑 মেগা</div><div class="card-icon card-icon-coc">💎</div><div class="card-stars">★★★★★</div><div class="card-name">CoC ১৪০০০ জেমস</div><div class="card-price-row"><span class="price-new">৳৮৯৯৯</span><span class="price-old">৳১১০০০</span><span class="price-off">-১৮%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC 14000','৮৯৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC 14000')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-new">🥇 গোল্ড</div><div class="card-icon card-icon-coc">🏆</div><div class="card-stars">★★★★★</div><div class="card-name">CoC গোল্ড পাস</div><div class="card-price-row"><span class="price-new">৳৩৯৯</span><span class="price-old">৳৫০০</span><span class="price-off">-২০%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ তাৎক্ষণিক</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoC Gold Pass','৩৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoC GP')">🛒</button></div></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PUBG -->
+<section class="section" id="pubg">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-crosshairs"></i> ব্যাটেল রয়্যাল</div>
+    <h2 class="section-title">🎯 PUBG UC</h2>
+    <p class="section-sub">সর্বোচ্চ নিরাপত্তায় PUBG UC ক্রয় করুন</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card"><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ৬০ UC</div><div class="card-price-row"><span class="price-new">৳৫৫</span><span class="price-old">৳৭০</span><span class="price-off">-২১%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 60 UC','৫৫')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 60')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-best">⭐ বেস্ট</div><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ৩২৫ UC</div><div class="card-price-row"><span class="price-new">৳২৭৯</span><span class="price-old">৳৩৫০</span><span class="price-off">-২০%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 325 UC','২৭৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 325')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-hot">🔥 হট</div><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ৬৬০ UC</div><div class="card-price-row"><span class="price-new">৳৪৯৯</span><span class="price-old">৳৬৫০</span><span class="price-off">-২৩%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 660 UC','৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 660')">🛒</button></div></div>
+    <div class="product-card"><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ১৮০০ UC</div><div class="card-price-row"><span class="price-new">৳১২৯৯</span><span class="price-old">৳১৬০০</span><span class="price-off">-১৯%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 1800 UC','১২৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 1800')">🛒</button></div></div>
+    <div class="product-card"><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ৩৮৫০ UC</div><div class="card-price-row"><span class="price-new">৳২৬৯৯</span><span class="price-old">৳৩৩০০</span><span class="price-off">-১৮%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 3850 UC','২৬৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 3850')">🛒</button></div></div>
+    <div class="product-card"><div class="card-badge badge-best">👑 মেগা</div><div class="card-icon card-icon-pubg">🎯</div><div class="card-stars">★★★★★</div><div class="card-name">PUBG ৮১০০ UC</div><div class="card-price-row"><span class="price-new">৳৫৪৯৯</span><span class="price-old">৳৬৮০০</span><span class="price-off">-১৯%</span></div><div class="card-meta"><div class="stock-indicator"><div class="stock-dot"></div>স্টক আছে</div><div class="card-delivery">⚡ ৫ মিনিট</div></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('PUBG 8100 UC','৫৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('PUBG 8100')">🛒</button></div></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ROCKSTAR GAMES -->
+<section class="section" id="rockstar">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-star"></i> প্রিমিয়াম গেম</div>
+    <h2 class="section-title">🎮 Rockstar গেমস</h2>
+    <p class="section-sub">বিশ্বের সেরা গেমিং অভিজ্ঞতা উপভোগ করুন</p>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-card" onclick="buyNow('GTA V','১৮৯৯')">
+      <div class="featured-img featured-img-gta">🏙️</div>
+      <div class="featured-body">
+        <div class="card-badge badge-best" style="position:relative;top:0;left:0;display:inline-flex;margin-bottom:8px;">⭐ বেস্ট সেলার</div>
+        <div class="featured-name">Grand Theft Auto V</div>
+        <div class="featured-desc">লস স্যান্টোসের উন্মুক্ত দুনিয়ায় অ্যাডভেঞ্চারে বেরিয়ে পড়ুন। গ্র্যান্ড থেফট অটো এর সেরা অধ্যায়।</div>
+        <div class="featured-price-row">
+          <div>
+            <span class="price-new" style="font-size:1.3rem">৳১৮৯৯</span>
+            <span class="price-old" style="margin-left:8px">৳২৫০০</span>
+          </div>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('GTA V','১৮৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="featured-card" onclick="buyNow('GTA Online','৯৯৯')">
+      <div class="featured-img featured-img-gta">🌐</div>
+      <div class="featured-body">
+        <div class="card-badge badge-hot" style="position:relative;top:0;left:0;display:inline-flex;margin-bottom:8px;">🔥 হট</div>
+        <div class="featured-name">GTA Online</div>
+        <div class="featured-desc">মিলিয়ন মিলিয়ন খেলোয়াড়দের সাথে অনলাইনে হেইস্ট করুন। সীমাহীন মজার দুনিয়ায় প্রবেশ করুন।</div>
+        <div class="featured-price-row">
+          <div>
+            <span class="price-new" style="font-size:1.3rem">৳৯৯৯</span>
+            <span class="price-old" style="margin-left:8px">৳১৩০০</span>
+          </div>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('GTA Online','৯৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="featured-card" onclick="buyNow('Red Dead Redemption 2','২৪৯৯')">
+      <div class="featured-img featured-img-rdr">🤠</div>
+      <div class="featured-body">
+        <div class="card-badge badge-new" style="position:relative;top:0;left:0;display:inline-flex;margin-bottom:8px;">✨ প্রিমিয়াম</div>
+        <div class="featured-name">Red Dead Redemption 2</div>
+        <div class="featured-desc">পশ্চিমের অ্যাডভেঞ্চারে ডুব দিন। আর্থার মর্গানের মহাকাব্যিক যাত্রায় যোগ দিন।</div>
+        <div class="featured-price-row">
+          <div>
+            <span class="price-new" style="font-size:1.3rem">৳২৪৯৯</span>
+            <span class="price-old" style="margin-left:8px">৳৩২০০</span>
+          </div>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('RDR2','২৪৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="featured-card" onclick="buyNow('GTA Trilogy','১৪৯৯')">
+      <div class="featured-img featured-img-gta">🕹️</div>
+      <div class="featured-body">
+        <div class="card-badge badge-sale" style="position:relative;top:0;left:0;display:inline-flex;margin-bottom:8px;">💰 সেল</div>
+        <div class="featured-name">GTA Trilogy Definitive</div>
+        <div class="featured-desc">তিনটি ক্লাসিক GTA গেম একসাথে — GTA III, Vice City এবং San Andreas রিমাস্টার্ড।</div>
+        <div class="featured-price-row">
+          <div>
+            <span class="price-new" style="font-size:1.3rem">৳১৪৯৯</span>
+            <span class="price-old" style="margin-left:8px">৳২০০০</span>
+          </div>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('GTA Trilogy','১৪৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PC GAMES -->
+<section class="section" id="pcgames">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-desktop"></i> ডিজিটাল গেমস</div>
+    <h2 class="section-title">💻 PC ও কনসোল গেমস</h2>
+    <p class="section-sub">বিশ্বের সেরা গেমগুলো এখন বাংলাদেশে সেরা দামে</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card"><div class="card-badge badge-hot">🔥 হট</div><div class="card-icon featured-img-gow" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">⚔️</div><div class="card-stars">★★★★★</div><div class="card-name">God of War</div><div class="card-price-row"><span class="price-new">৳১৪৯৯</span><span class="price-old">৳২০০০</span><span class="price-off">-২৫%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('God of War','১৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('GoW')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-new">✨ নতুন</div><div class="card-icon featured-img-gow" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">⚡</div><div class="card-stars">★★★★★</div><div class="card-name">God of War Ragnarök</div><div class="card-price-row"><span class="price-new">৳১৯৯৯</span><span class="price-old">৳২৬০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('GoW Ragnarok','১৯৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('GoW R')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon card-icon-ef" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">⚽</div><div class="card-stars">★★★★★</div><div class="card-name">EA Sports FC 25</div><div class="card-price-row"><span class="price-new">৳১৭৯৯</span><span class="price-old">৳২৩০০</span><span class="price-off">-২২%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('EA FC 25','১৭৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('EA FC')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-best">⭐ বেস্ট</div><div class="card-icon featured-img-elden" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🏺</div><div class="card-stars">★★★★★</div><div class="card-name">Elden Ring</div><div class="card-price-row"><span class="price-new">৳২২৯৯</span><span class="price-old">৳২৯০০</span><span class="price-off">-২১%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Elden Ring','২২৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('ER')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon featured-img-mc" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">⛏️</div><div class="card-stars">★★★★★</div><div class="card-name">Minecraft</div><div class="card-price-row"><span class="price-new">৳৮৯৯</span><span class="price-old">৳১২০০</span><span class="price-off">-২৫%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Minecraft','৮৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('MC')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-hot">🌆 সাইবার</div><div class="card-icon featured-img-cp" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🤖</div><div class="card-stars">★★★★★</div><div class="card-name">Cyberpunk 2077</div><div class="card-price-row"><span class="price-new">৳১৪৯৯</span><span class="price-old">৳২০০০</span><span class="price-off">-২৫%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Cyberpunk','১৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CP')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon featured-img-gow" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🕷️</div><div class="card-stars">★★★★★</div><div class="card-name">Spider-Man</div><div class="card-price-row"><span class="price-new">৳১৬৯৯</span><span class="price-old">৳২২০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Spider-Man','১৬৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('SM')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon featured-img-rdr" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🧙</div><div class="card-stars">★★★★★</div><div class="card-name">The Witcher 3</div><div class="card-price-row"><span class="price-new">৳৯৯৯</span><span class="price-old">৳১৩০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Witcher 3','৯৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('W3')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon card-icon-rs" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🧟</div><div class="card-stars">★★★★★</div><div class="card-name">Resident Evil 4</div><div class="card-price-row"><span class="price-new">৳১৭৯৯</span><span class="price-old">৳২৩০০</span><span class="price-off">-২২%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('RE4','১৭৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('RE4')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon featured-img-elden" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🗡️</div><div class="card-stars">★★★★★</div><div class="card-name">Assassin's Creed</div><div class="card-price-row"><span class="price-new">৳১৪৯৯</span><span class="price-old">৳২০০০</span><span class="price-off">-২৫%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('AC','১৪৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('AC')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-hot">💥 অ্যাকশন</div><div class="card-icon card-icon-pubg" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">💣</div><div class="card-stars">★★★★★</div><div class="card-name">Call of Duty</div><div class="card-price-row"><span class="price-new">৳১৮৯৯</span><span class="price-old">৳২৫০০</span><span class="price-off">-২৪%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('CoD','১৮৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('CoD')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon card-icon-ef" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">👊</div><div class="card-stars">★★★★★</div><div class="card-name">Tekken 8</div><div class="card-price-row"><span class="price-new">৳১৬৯৯</span><span class="price-old">৳২২০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Tekken 8','১৬৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('T8')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-best">⭐ ফেভারিট</div><div class="card-icon featured-img-gow" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">💀</div><div class="card-stars">★★★★★</div><div class="card-name">Mortal Kombat 1</div><div class="card-price-row"><span class="price-new">৳১৭৯৯</span><span class="price-old">৳২৩০০</span><span class="price-off">-২২%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('MK1','১৭৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('MK1')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-badge badge-new">🐒 GOTY</div><div class="card-icon featured-img-mc" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🐉</div><div class="card-stars">★★★★★</div><div class="card-name">Black Myth: Wukong</div><div class="card-price-row"><span class="price-new">৳১৯৯৯</span><span class="price-old">৳২৬০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('Black Myth Wukong','১৯৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('BMW')">🛒</button></div></div>
+
+    <div class="product-card"><div class="card-icon card-icon-pubg" style="height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:12px;">🪖</div><div class="card-stars">★★★★★</div><div class="card-name">Battlefield 2042</div><div class="card-price-row"><span class="price-new">৳৯৯৯</span><span class="price-old">৳১৩০০</span><span class="price-off">-২৩%</span></div><div class="card-btns"><button class="btn-buy" onclick="buyNow('BF2042','৯৯৯')">কিনুন</button><button class="btn-cart" onclick="addToCart('BF2042')">🛒</button></div></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- GIFT CARDS -->
+<section class="section" id="giftcards">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-gift"></i> গিফট কার্ড</div>
+    <h2 class="section-title">🎁 ডিজিটাল গিফট কার্ড</h2>
+    <p class="section-sub">প্রিয়জনকে গেমিং গিফট দিন সেরা দামে</p>
+  </div>
+  <div class="gift-grid">
+    <div class="gift-card" onclick="buyNow('Steam Wallet','৩৯৯')">
+      <div class="gift-header gift-steam">🎮</div>
+      <div class="gift-body">
+        <div class="card-stars">★★★★★</div>
+        <div class="featured-name" style="margin-bottom:5px">Steam Wallet</div>
+        <div class="featured-desc" style="margin-bottom:12px">৳৩০০ - ৳৫০০০ যেকোনো মূল্যমান</div>
+        <div class="featured-price-row">
+          <span class="price-new">৳৩৯৯+</span>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('Steam Wallet','৩৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="gift-card" onclick="buyNow('PlayStation Gift Card','৪৯৯')">
+      <div class="gift-header gift-ps">🎮</div>
+      <div class="gift-body">
+        <div class="card-stars">★★★★★</div>
+        <div class="featured-name" style="margin-bottom:5px">PlayStation Gift Card</div>
+        <div class="featured-desc" style="margin-bottom:12px">PSN ক্রেডিট যেকোনো মূল্যমান</div>
+        <div class="featured-price-row">
+          <span class="price-new">৳৪৯৯+</span>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('PSN Card','৪৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="gift-card" onclick="buyNow('Xbox Gift Card','৪৯৯')">
+      <div class="gift-header gift-xbox">🎮</div>
+      <div class="gift-body">
+        <div class="card-stars">★★★★★</div>
+        <div class="featured-name" style="margin-bottom:5px">Xbox Gift Card</div>
+        <div class="featured-desc" style="margin-bottom:12px">Microsoft Store ক্রেডিট</div>
+        <div class="featured-price-row">
+          <span class="price-new">৳৪৯৯+</span>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('Xbox Card','৪৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+    <div class="gift-card" onclick="buyNow('Google Play Gift Card','৩৯৯')">
+      <div class="gift-header gift-gplay">🎮</div>
+      <div class="gift-body">
+        <div class="card-stars">★★★★★</div>
+        <div class="featured-name" style="margin-bottom:5px">Google Play Gift Card</div>
+        <div class="featured-desc" style="margin-bottom:12px">অ্যাপ ও গেম কিনুন সহজে</div>
+        <div class="featured-price-row">
+          <span class="price-new">৳৩৯৯+</span>
+          <button class="btn-buy" onclick="event.stopPropagation();buyNow('Google Play Card','৩৯৯')">কিনুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PAYMENT SECTION -->
+<section class="payment-section">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-lock"></i> নিরাপদ পেমেন্ট</div>
+    <h2 class="section-title">💳 পেমেন্ট পদ্ধতি</h2>
+    <p class="section-sub">বাংলাদেশের সকল মোবাইল ব্যাংকিং সাপোর্ট করে</p>
+  </div>
+  <div class="payment-grid">
+    <div class="payment-card">
+      <span class="payment-icon">🔴</span>
+      <div class="payment-name">bKash</div>
+      <div class="payment-desc">বিকাশের মাধ্যমে পেমেন্ট করুন। দ্রুত ও নিরাপদ।</div>
+    </div>
+    <div class="payment-card">
+      <span class="payment-icon">🟠</span>
+      <div class="payment-name">Nagad</div>
+      <div class="payment-desc">নগদের মাধ্যমে সহজে পেমেন্ট করুন।</div>
+    </div>
+    <div class="payment-card">
+      <span class="payment-icon">🟣</span>
+      <div class="payment-name">Rocket</div>
+      <div class="payment-desc">ডাচ-বাংলা ব্যাংকের রকেটে পেমেন্ট করুন।</div>
+    </div>
+    <div class="payment-card">
+      <span class="payment-icon">📸</span>
+      <div class="payment-name">স্ক্রিনশট যাচাই</div>
+      <div class="payment-desc">পেমেন্ট স্ক্রিনশট আপলোড করুন এবং দ্রুত যাচাই করুন।</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-star"></i> কাস্টমার রিভিউ</div>
+    <h2 class="section-title">🌟 সন্তুষ্ট গ্রাহকদের মতামত</h2>
+    <p class="section-sub">আমাদের হাজার হাজার খুশি গ্রাহকের মধ্যে থেকে কিছু রিভিউ</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(255,100,0,0.2)">রা</div>
+        <div>
+          <div class="review-name">রাফি আহমেদ</div>
+          <div class="review-game">Free Fire ডায়মন্ড</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">অসাধারণ সার্ভিস! মাত্র ৫ মিনিটে ডায়মন্ড পেয়ে গেলাম। দাম অনেক কম এবং সার্ভিস একদম বিশ্বস্ত। GameZone BD কে অনেক ধন্যবাদ!</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(0,150,255,0.2)">তা</div>
+        <div>
+          <div class="review-name">তানভীর হোসেন</div>
+          <div class="review-game">PUBG UC</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">বাংলাদেশের সেরা গেমিং স্টোর! PUBG UC কিনেছি, দাম একদম কম এবং তাৎক্ষণিক ডেলিভারি। WhatsApp সাপোর্টও দুর্দান্ত।</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(255,0,150,0.2)">সু</div>
+        <div>
+          <div class="review-name">সুমাইয়া খানম</div>
+          <div class="review-game">eFootball কয়েন</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">প্রথমবার কিনেছিলাম একটু ভয়ে ভয়ে, কিন্তু সার্ভিস দেখে অবাক! খুব দ্রুত ডেলিভারি এবং দাম অনেক সাশ্রয়ী।</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(0,255,100,0.2)">মি</div>
+        <div>
+          <div class="review-name">মিজানুর রহমান</div>
+          <div class="review-game">GTA V PC</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">GTA V কিনলাম, একদম অরিজিনাল কী পেলাম! দাম অনেক কম ছিল অন্যান্য জায়গার তুলনায়। ১০০% সুপারিশ করব।</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(255,200,0,0.2)">শা</div>
+        <div>
+          <div class="review-name">শাকিব আলী</div>
+          <div class="review-game">Clash of Clans</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">CoC গোল্ড পাস কিনেছি। সার্ভিস অসাধারণ, দাম কম। WhatsApp এ যোগাযোগ করলে তাৎক্ষণিক সাড়া পাওয়া যায়।</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:rgba(150,0,255,0.2)">ফা</div>
+        <div>
+          <div class="review-name">ফারহান ইসলাম</div>
+          <div class="review-game">Steam Gift Card</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Steam Gift Card এর জন্য বিশ্বস্ত একমাত্র জায়গা। বহুবার কিনেছি, কখনো সমস্যা হয়নি। GameZone BD সত্যিই দুর্দান্ত!</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-question-circle"></i> সাধারণ প্রশ্ন</div>
+    <h2 class="section-title">❓ প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>
+    <p class="section-sub">আপনার সকল প্রশ্নের উত্তর এখানে পাবেন</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">কিভাবে অর্ডার করব? <span class="faq-icon">+</span></div>
+      <div class="faq-a">পণ্য বেছে "কিনুন" বাটনে ক্লিক করুন। আপনার গেম আইডি, পরিমাণ এবং পেমেন্ট পদ্ধতি দিন। পেমেন্ট করে স্ক্রিনশট আপলোড করুন। আমরা যাচাই করে দ্রুত ডেলিভারি দেব।</div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">ডেলিভারি কত সময় লাগে? <span class="faq-icon">+</span></div>
+      <div class="faq-a">সাধারণত ৫-১৫ মিনিটের মধ্যে ডেলিভারি দেওয়া হয়। রাত ১২টা থেকে সকাল ৮টার মধ্যে কিছুটা বেশি সময় লাগতে পারে। আমরা ২৪/৭ সার্ভিস দিই।</div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">কোন পেমেন্ট পদ্ধতি গ্রহণ করা হয়? <span class="faq-icon">+</span></div>
+      <div class="faq-a">আমরা bKash, Nagad এবং Rocket গ্রহণ করি। পেমেন্ট করার পর অর্ডার ফর্মে স্ক্রিনশট আপলোড করুন।</div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">পণ্য কি ১০০% অরিজিনাল? <span class="faq-icon">+</span></div>
+      <div class="faq-a">হ্যাঁ, আমাদের সকল পণ্য ১০০% অরিজিনাল এবং গ্যারান্টিযুক্ত। আমরা সরাসরি অথোরাইজড সোর্স থেকে পণ্য সরবরাহ করি।</div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">সমস্যা হলে কোথায় যোগাযোগ করব? <span class="faq-icon">+</span></div>
+      <div class="faq-a">WhatsApp: 01409064279 তে যোগাযোগ করুন। আমরা ২৪/৭ সাপোর্ট দিই। সাধারণত ৫ মিনিটের মধ্যে রিপ্লাই পাবেন।</div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-q">রিফান্ড পাওয়া যায়? <span class="faq-icon">+</span></div>
+      <div class="faq-a">পণ্য ডেলিভারি না হলে সম্পূর্ণ রিফান্ড দেওয়া হয়। ডিজিটাল পণ্য হওয়ায় ডেলিভারির পরে রিফান্ড সম্ভব নয়।</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <div class="section-eyebrow"><i class="fas fa-headset"></i> যোগাযোগ করুন</div>
+    <h2 class="section-title">📞 আমাদের সাথে যোগাযোগ করুন</h2>
+    <p class="section-sub">যেকোনো সমস্যায় আমরা সর্বদা আপনার পাশে আছি</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-title">WhatsApp সাপোর্ট</div>
+      <div class="contact-info">01409064279<br>২৪/৭ তাৎক্ষণিক সাড়া</div>
+      <a href="https://wa.me/8801409064279" class="btn-primary" style="margin-top:15px;display:inline-flex;font-size:0.85rem;padding:10px 20px" target="_blank">WhatsApp করুন</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📱</div>
+      <div class="contact-title">Facebook পেজ</div>
+      <div class="contact-info">GameZone BD অফিশিয়াল পেজে মেসেজ করুন।<br>দ্রুত সাপোর্ট পাবেন।</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <div class="contact-title">ইমেইল সাপোর্ট</div>
+      <div class="contact-info">support@gamezonebd.com<br>সাধারণত ২-৪ ঘন্টার মধ্যে রিপ্লাই</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-title">কার্যক্রমের সময়</div>
+      <div class="contact-info">সোমবার - রবিবার<br>সকাল ৮টা - রাত ১২টা<br>জরুরি সাপোর্ট ২৪/৭</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo">GameZone BD</span>
+      <p class="footer-desc">বাংলাদেশের সেরা ডিজিটাল গেমিং মার্কেটপ্লেস। ২০২২ সাল থেকে লক্ষাধিক গেমারকে সেবা দিয়ে আসছি।</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">গেম কয়েন</div>
+      <ul class="footer-links">
+        <li><a href="#freefire">🔥 Free Fire ডায়মন্ড</a></li>
+        <li><a href="#efootball">⚽ eFootball কয়েন</a></li>
+        <li><a href="#coc">⚔️ Clash of Clans</a></li>
+        <li><a href="#pubg">🎯 PUBG UC</a></li>
+        <li><a href="#giftcards">🎁 Gift Cards</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">ডিজিটাল গেমস</div>
+      <ul class="footer-links">
+        <li><a href="#rockstar">🎮 Rockstar Games</a></li>
+        <li><a href="#pcgames">💻 PC Games</a></li>
+        <li><a href="#pcgames">🎯 Console Games</a></li>
+        <li><a href="#pcgames">⚡ Action Games</a></li>
+        <li><a href="#pcgames">🏆 Premium Games</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">অ্যাকাউন্ট</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openModal('login')">🔑 লগইন করুন</a></li>
+        <li><a href="#" onclick="openModal('register')">📝 রেজিস্ট্রেশন</a></li>
+        <li><a href="#">📦 অর্ডার ট্র্যাক</a></li>
+        <li><a href="#">❤️ উইশলিস্ট</a></li>
+        <li><a href="#contact">📞 সাপোর্ট</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© ২০২৪ GameZone BD | সর্বস্বত্ব সংরক্ষিত | বাংলাদেশে তৈরি 🇧🇩</p>
+    <p style="margin-top:5px;font-size:0.72rem">WhatsApp: 01409064279 | support@gamezonebd.com</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/8801409064279" class="whatsapp-float" target="_blank" title="WhatsApp সাপোর্ট">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- PURCHASE MODAL -->
+<div class="modal-overlay" id="buyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('buyModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-title">🛒 অর্ডার করুন</div>
+    <div class="modal-product" id="modalProduct">Free Fire 115 ডায়মন্ড</div>
+    <div class="modal-price" id="modalPrice">৳৯৯</div>
+    <div class="input-group">
+      <label class="input-label">গেম আইডি / ইউজার আইডি *</label>
+      <input type="text" class="input-field" placeholder="আপনার গেম আইডি লিখুন" id="gameId">
+    </div>
+    <div class="input-group">
+      <label class="input-label">পেমেন্ট পদ্ধতি *</label>
+      <div class="payment-methods">
+        <button class="pm-btn bkash active" onclick="selectPM(this,'bKash')">🔴 bKash</button>
+        <button class="pm-btn nagad" onclick="selectPM(this,'Nagad')">🟠 Nagad</button>
+        <button class="pm-btn rocket" onclick="selectPM(this,'Rocket')">🟣 Rocket</button>
+      </div>
+    </div>
+    <div class="input-group">
+      <label class="input-label">পেমেন্ট নম্বর: <span style="color:var(--accent-blue)" id="pmNumber">01409064279 (bKash)</span></label>
+    </div>
+    <div class="input-group">
+      <label class="input-label">ট্রানজেকশন আইডি *</label>
+      <input type="text" class="input-field" placeholder="পেমেন্ট করার পর TrxID লিখুন" id="trxId">
+    </div>
+    <button class="btn-primary" style="width:100%;justify-content:center;padding:13px" onclick="placeOrder()">
+      <i class="fas fa-check-circle"></i> অর্ডার কনফার্ম করুন
+    </button>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-title">🔑 লগইন করুন</div>
+    <div class="modal-product" style="margin-bottom:20px">আপনার অ্যাকাউন্টে প্রবেশ করুন</div>
+    <div class="input-group">
+      <label class="input-label">ফোন নম্বর বা ইমেইল</label>
+      <input type="text" class="input-field" placeholder="01XXXXXXXXX বা email@example.com">
+    </div>
+    <div class="input-group">
+      <label class="input-label">পাসওয়ার্ড</label>
+      <input type="password" class="input-field" placeholder="আপনার পাসওয়ার্ড">
+    </div>
+    <button class="btn-primary" style="width:100%;justify-content:center;padding:13px;margin-bottom:12px" onclick="closeModal('loginModal');showToast('লগইন সফল হয়েছে! ✓')">
+      <i class="fas fa-sign-in-alt"></i> লগইন করুন
+    </button>
+    <div style="text-align:center;font-size:0.8rem;color:var(--text-secondary)">
+      অ্যাকাউন্ট নেই? <a href="#" style="color:var(--accent-blue)" onclick="closeModal('loginModal');openModal('register')">রেজিস্ট্রেশন করুন</a>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('registerModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-title">📝 নতুন অ্যাকাউন্ট</div>
+    <div class="modal-product" style="margin-bottom:20px">GameZone BD তে যোগ দিন</div>
+    <div class="input-group">
+      <label class="input-label">পুরো নাম</label>
+      <input type="text" class="input-field" placeholder="আপনার নাম">
+    </div>
+    <div class="input-group">
+      <label class="input-label">ফোন নম্বর</label>
+      <input type="text" class="input-field" placeholder="01XXXXXXXXX">
+    </div>
+    <div class="input-group">
+      <label class="input-label">পাসওয়ার্ড</label>
+      <input type="password" class="input-field" placeholder="শক্তিশালী পাসওয়ার্ড তৈরি করুন">
+    </div>
+    <button class="btn-primary" style="width:100%;justify-content:center;padding:13px" onclick="closeModal('registerModal');showToast('অ্যাকাউন্ট তৈরি হয়েছে! ✓')">
+      <i class="fas fa-user-plus"></i> অ্যাকাউন্ট তৈরি করুন
+    </button>
+  </div>
+</div>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('cartModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-title">🛒 শপিং কার্ট</div>
+    <div id="cartItems" style="margin:20px 0;min-height:80px">
+      <div style="text-align:center;color:var(--text-secondary);padding:20px;font-size:0.85rem">
+        <i class="fas fa-shopping-cart" style="font-size:2rem;margin-bottom:10px;display:block;opacity:0.5"></i>
+        কার্ট ফাঁকা আছে
+      </div>
+    </div>
+    <div id="cartTotal" style="display:none;border-top:1px solid rgba(0,212,255,0.2);padding-top:15px;margin-bottom:15px">
+      <div style="display:flex;justify-content:space-between;font-weight:700">
+        <span>মোট:</span>
+        <span class="price-new" id="totalAmount">৳০</span>
+      </div>
+    </div>
+    <button class="btn-primary" style="width:100%;justify-content:center;padding:13px" onclick="checkout()">
+      <i class="fas fa-credit-card"></i> চেকআউট করুন
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle" style="color:var(--neon-green)"></i>
+  <span id="toastText">সফলভাবে কার্টে যোগ করা হয়েছে!</span>
+</div>
+
+<script>
+  // PARTICLES
+  const particleContainer = document.getElementById('particles');
+  const colors = ['#00d4ff','#7c3aed','#e879f9','#00ff88','#ff6600'];
+  for(let i = 0; i < 35; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left:${Math.random()*100}%;
+      width:${Math.random()*3+1}px;
+      height:${Math.random()*3+1}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*15+8}s;
+      animation-delay:${Math.random()*10}s;
+      opacity:0;
+    `;
+    particleContainer.appendChild(p);
+  }
+
+  // COUNTDOWN TIMER
+  function setCountdown(){
+    let endTime = localStorage.getItem('gzbd_end');
+    if(!endTime || Date.now() > parseInt(endTime)){
+      endTime = Date.now() + 8*3600000 + 24*60000 + 37000;
+      localStorage.setItem('gzbd_end', endTime);
+    }
+    function tick(){
+      const diff = parseInt(localStorage.getItem('gzbd_end')) - Date.now();
+      if(diff <= 0){ clearInterval(timer); return; }
+      const h = Math.floor(diff/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      const s = Math.floor((diff%60000)/1000);
+      document.getElementById('hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+    }
+    const timer = setInterval(tick, 1000);
+    tick();
+  }
+  setCountdown();
+
+  // CART STATE
+  let cart = [];
+  let currentProduct = '';
+  let currentPrice = '';
+  let selectedPM = 'bKash';
+  const pmNumbers = { bKash:'01409064279 (bKash)', Nagad:'01409064279 (Nagad)', Rocket:'01409064279 (Rocket)' };
+
+  // MODAL
+  function openModal(type){
+    if(type === 'login') document.getElementById('loginModal').classList.add('active');
+    else if(type === 'register') document.getElementById('registerModal').classList.add('active');
+    else if(type === 'cart'){ updateCart(); document.getElementById('cartModal').classList.add('active'); }
+  }
+
+  function closeModal(id){ document.getElementById(id).classList.remove('active'); }
+
+  document.querySelectorAll('.modal-overlay').forEach(m=>{
+    m.addEventListener('click', function(e){ if(e.target===this) this.classList.remove('active'); });
+  });
+
+  // BUY NOW
+  function buyNow(product, price){
+    currentProduct = product;
+    currentPrice = price;
+    document.getElementById('modalProduct').textContent = product;
+    document.getElementById('modalPrice').textContent = '৳'+price;
+    document.getElementById('gameId').value = '';
+    document.getElementById('trxId').value = '';
+    document.getElementById('buyModal').classList.add('active');
+  }
+
+  // ADD TO CART
+  function addToCart(product){
+    cart.push(product);
+    document.querySelector('.nav-icon-btn[title="কার্ট"] .badge').textContent = cart.length;
+    showToast('কার্টে যোগ হয়েছে: '+product+' ✓');
+  }
+
+  // UPDATE CART DISPLAY
+  function updateCart(){
+    const container = document.getElementById('cartItems');
+    const totalDiv = document.getElementById('cartTotal');
+    if(cart.length === 0){
+      container.innerHTML = `<div style="text-align:center;color:var(--text-secondary);padding:20px;font-size:0.85rem"><i class="fas fa-shopping-cart" style="font-size:2rem;margin-bottom:10px;display:block;opacity:0.5"></i>কার্ট ফাঁকা আছে</div>`;
+      totalDiv.style.display = 'none';
+      return;
+    }
+    container.innerHTML = cart.map((item,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)"><span style="font-size:0.85rem">${item}</span><button onclick="removeCart(${i})" style="background:rgba(255,75,43,0.2);border:none;color:#ff4b2b;padding:4px 10px;border-radius:6px;cursor:pointer;font-size:0.75rem">✕</button></div>`).join('');
+    totalDiv.style.display = 'block';
+  }
+
+  function removeCart(i){ cart.splice(i,1); updateCart(); document.querySelector('.nav-icon-btn[title="কার্ট"] .badge').textContent = cart.length; }
+
+  function checkout(){ closeModal('cartModal'); if(cart.length>0){ buyNow(cart[0],'৯৯'); } }
+
+  // SELECT PAYMENT METHOD
+  function selectPM(btn, method){
+    document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedPM = method;
+    document.getElementById('pmNumber').textContent = pmNumbers[method];
+  }
+
+  // PLACE ORDER
+  function placeOrder(){
+    const gameId = document.getElementById('gameId').value.trim();
+    const trxId = document.getElementById('trxId').value.trim();
+    if(!gameId){ showToast('❌ গেম আইডি দিন'); return; }
+    if(!trxId){ showToast('❌ ট্রানজেকশন আইডি দিন'); return; }
+    closeModal('buyModal');
+    showToast('🎉 অর্ডার সফল! শীঘ্রই ডেলিভারি পাবেন।');
+  }
+
+  // TOAST
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    document.getElementById('toastText').textContent = msg;
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'), 3500);
+  }
+
+  // FAQ TOGGLE
+  function toggleFAQ(el){ el.classList.toggle('open'); }
+
+  // FF FILTER
+  function filterFF(cat, btn){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('#ffGrid .product-card');
+    cards.forEach(card=>{
+      if(cat === 'all' || card.dataset.cat === cat){
+        card.style.display = '';
+        card.style.animation = 'fadeInUp 0.3s ease';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // MOBILE MENU TOGGLE
+  function toggleMenu(){
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+  // SMOOTH ACTIVE NAV LINK
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(s=>{
+      if(window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-link').forEach(l=>{
+      l.classList.remove('active');
+      if(l.getAttribute('href') === '#'+current) l.classList.add('active');
+    });
+  });
+
+  // CARD HOVER 3D TILT
+  document.querySelectorAll('.product-card, .featured-card, .gift-card').forEach(card=>{
+    card.addEventListener('mousemove', function(e){
+      const rect = this.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      this.style.transform = `translateY(-8px) rotateY(${x*8}deg) rotateX(${-y*8}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', function(){
+      this.style.transform = '';
+    });
+  });
+
+  // INTERSECTION OBSERVER FOR FADE IN
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  },{threshold:0.08});
+
+  document.querySelectorAll('.product-card, .featured-card, .gift-card, .review-card, .payment-card, .contact-card').forEach((el,i)=>{
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = `opacity 0.5s ease ${i*0.05}s, transform 0.5s ease ${i*0.05}s`;
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
